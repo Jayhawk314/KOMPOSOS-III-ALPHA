@@ -23,7 +23,7 @@ This is a **closed-loop reasoning engine** where:
 ```
 User Query (English)
        ↓
-   [OPUS: Parse Intent]
+   [LLM : Parse Intent]
        ↓
    [CATEGORICAL: Build Sheaf]
        ↓
