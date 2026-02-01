@@ -33,7 +33,7 @@ User Query (English)
        ↓
    [GAME: Find Equilibrium]
        ↓
-   [OPUS: Synthesize Report]
+   [LLM : Synthesize Report]
        ↓
    Answer (English)
 ```
@@ -123,5 +123,4 @@ pytest tests/
 - Yi Ma et al.: *CRATE: White-Box Transformers*
 
 ## License
-
-MIT
+Apache 2.0 dual commercial
