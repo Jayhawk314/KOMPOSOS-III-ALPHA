@@ -1,4 +1,4 @@
-# Acknowledgments & Influences
+I'm# Acknowledgments & Influences
 
 This work stands on the shoulders of giants. While all errors and limitations are mine alone, the intellectual foundations come from researchers, educators, and practitioners who generously share their knowledge.
 
@@ -97,7 +97,7 @@ If you recognize your work reflected here and I've failed to cite it properly, p
 
 ## License
 
-While the code is Apache 2.0 licensed (see LICENSE), the intellectual debts acknowledged here are immeasurable. If this work contributes anything useful, credit belongs to the community that made it possible.
+While the code is Apache 2.0 licensed Dual Commercial (see LICENSE), the intellectual debts acknowledged here are immeasurable. If this work contributes anything useful, credit belongs to the community that made it possible.
 
 ---
 
