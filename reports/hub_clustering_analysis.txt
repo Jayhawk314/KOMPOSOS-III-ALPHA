@@ -1,0 +1,29 @@
+================================================================================
+HUB CLUSTERING ANALYSIS
+================================================================================
+
+Top 15 Proteins by Frequency:
+
+ 1. CHEK2         14 ( 14.0%)
+ 2. PIK3CA        10 ( 10.0%)
+ 3. PTEN           8 (  8.0%)
+ 4. MYC            7 (  7.0%)
+ 5. NRAS           7 (  7.0%)
+ 6. JAK2           6 (  6.0%)
+ 7. CDK6           6 (  6.0%)
+ 8. RAD51          6 (  6.0%)
+ 9. BRAF           5 (  5.0%)
+10. CASP3          4 (  4.0%)
+11. BRCA2          3 (  3.0%)
+12. EGFR           3 (  3.0%)
+13. AKT1           3 (  3.0%)
+14. MDM2           2 (  2.0%)
+15. RAF1           2 (  2.0%)
+
+
+Hub Involvement:
+  Total predictions: 50
+  Involving hubs: 45 (90.0%)
+  Both hubs: 24 (48.0%)
+
+Assessment: SEVERE - Predictions dominated by hub proteins (likely artifact)

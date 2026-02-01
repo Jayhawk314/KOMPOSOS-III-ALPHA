@@ -1,0 +1,725 @@
+{
+  "bio_precision": 0.06,
+  "text_precision": 0.26,
+  "improvement": -0.2,
+  "bio_total": 50,
+  "text_total": 50,
+  "bio_unique": 35,
+  "text_unique": 35,
+  "overlap": 15,
+  "bio_validated": [
+    {
+      "source": "EGFR",
+      "target": "RAF1"
+    },
+    {
+      "source": "EGFR",
+      "target": "BRAF"
+    },
+    {
+      "source": "PTEN",
+      "target": "BAX"
+    }
+  ],
+  "text_validated": [
+    {
+      "source": "KRAS",
+      "target": "MYC"
+    },
+    {
+      "source": "EGFR",
+      "target": "MYC"
+    },
+    {
+      "source": "PTEN",
+      "target": "BAX"
+    },
+    {
+      "source": "EGFR",
+      "target": "BRAF"
+    },
+    {
+      "source": "EGFR",
+      "target": "RAF1"
+    },
+    {
+      "source": "BRCA1",
+      "target": "RAD51"
+    },
+    {
+      "source": "NRAS",
+      "target": "MYC"
+    },
+    {
+      "source": "PIK3CA",
+      "target": "MYC"
+    },
+    {
+      "source": "STAT3",
+      "target": "KRAS"
+    },
+    {
+      "source": "RAF1",
+      "target": "TP53"
+    },
+    {
+      "source": "BRAF",
+      "target": "TP53"
+    },
+    {
+      "source": "CDK6",
+      "target": "TP53"
+    },
+    {
+      "source": "CDK4",
+      "target": "TP53"
+    }
+  ],
+  "bio_only_validated": [],
+  "text_only_validated": [
+    {
+      "source": "CDK4",
+      "target": "TP53"
+    },
+    {
+      "source": "BRCA1",
+      "target": "RAD51"
+    },
+    {
+      "source": "EGFR",
+      "target": "MYC"
+    },
+    {
+      "source": "STAT3",
+      "target": "KRAS"
+    },
+    {
+      "source": "PIK3CA",
+      "target": "MYC"
+    },
+    {
+      "source": "RAF1",
+      "target": "TP53"
+    },
+    {
+      "source": "BRAF",
+      "target": "TP53"
+    },
+    {
+      "source": "CDK6",
+      "target": "TP53"
+    },
+    {
+      "source": "NRAS",
+      "target": "MYC"
+    },
+    {
+      "source": "KRAS",
+      "target": "MYC"
+    }
+  ],
+  "bio_all_predictions": [
+    {
+      "source": "TP53",
+      "target": "MYC",
+      "confidence": 0.74,
+      "relation": "activates"
+    },
+    {
+      "source": "BRAF",
+      "target": "MYC",
+      "confidence": 0.7294815116524698,
+      "relation": "activates"
+    },
+    {
+      "source": "CHEK2",
+      "target": "MYC",
+      "confidence": 0.7271052139252425,
+      "relation": "activates"
+    },
+    {
+      "source": "MYC",
+      "target": "CHEK2",
+      "confidence": 0.7181875000000001,
+      "relation": "phosphorylates"
+    },
+    {
+      "source": "MTOR",
+      "target": "CHEK2",
+      "confidence": 0.7181875000000001,
+      "relation": "phosphorylates"
+    },
+    {
+      "source": "MDM2",
+      "target": "CHEK2",
+      "confidence": 0.7181875000000001,
+      "relation": "phosphorylates"
+    },
+    {
+      "source": "BRCA2",
+      "target": "JAK2",
+      "confidence": 0.7175,
+      "relation": "related_to"
+    },
+    {
+      "source": "NRAS",
+      "target": "CDK6",
+      "confidence": 0.7175,
+      "relation": "related_to"
+    },
+    {
+      "source": "CDK6",
+      "target": "JAK2",
+      "confidence": 0.7175,
+      "relation": "related_to"
+    },
+    {
+      "source": "CHEK2",
+      "target": "CDK6",
+      "confidence": 0.7175,
+      "relation": "related_to"
+    },
+    {
+      "source": "CASP3",
+      "target": "PTEN",
+      "confidence": 0.7175,
+      "relation": "related_to"
+    },
+    {
+      "source": "CDK6",
+      "target": "PIK3CA",
+      "confidence": 0.7175,
+      "relation": "related_to"
+    },
+    {
+      "source": "PIK3CA",
+      "target": "PTEN",
+      "confidence": 0.7175,
+      "relation": "related_to"
+    },
+    {
+      "source": "CASP3",
+      "target": "NRAS",
+      "confidence": 0.7175,
+      "relation": "related_to"
+    },
+    {
+      "source": "STAT5",
+      "target": "PTEN",
+      "confidence": 0.7175,
+      "relation": "related_to"
+    },
+    {
+      "source": "CHEK2",
+      "target": "JAK2",
+      "confidence": 0.7175,
+      "relation": "related_to"
+    },
+    {
+      "source": "PIK3CA",
+      "target": "NRAS",
+      "confidence": 0.7175,
+      "relation": "related_to"
+    },
+    {
+      "source": "NRAS",
+      "target": "CASP3",
+      "confidence": 0.7175,
+      "relation": "related_to"
+    },
+    {
+      "source": "NRAS",
+      "target": "PTEN",
+      "confidence": 0.7175,
+      "relation": "related_to"
+    },
+    {
+      "source": "NRAS",
+      "target": "PIK3CA",
+      "confidence": 0.7175,
+      "relation": "related_to"
+    },
+    {
+      "source": "NRAS",
+      "target": "CHEK2",
+      "confidence": 0.7175,
+      "relation": "related_to"
+    },
+    {
+      "source": "RAD51",
+      "target": "PIK3CA",
+      "confidence": 0.7175,
+      "relation": "related_to"
+    },
+    {
+      "source": "PIK3CA",
+      "target": "JAK2",
+      "confidence": 0.7167447697506837,
+      "relation": "related_to"
+    },
+    {
+      "source": "JAK2",
+      "target": "PIK3CA",
+      "confidence": 0.7167447697506837,
+      "relation": "related_to"
+    },
+    {
+      "source": "PTEN",
+      "target": "CHEK2",
+      "confidence": 0.7166355646761393,
+      "relation": "related_to"
+    },
+    {
+      "source": "CHEK2",
+      "target": "PIK3CA",
+      "confidence": 0.7162295026056926,
+      "relation": "related_to"
+    },
+    {
+      "source": "PIK3CA",
+      "target": "CHEK2",
+      "confidence": 0.7162295026056926,
+      "relation": "related_to"
+    },
+    {
+      "source": "MDM2",
+      "target": "MYC",
+      "confidence": 0.7152071439139545,
+      "relation": "activates"
+    },
+    {
+      "source": "ATR",
+      "target": "MYC",
+      "confidence": 0.7149126010201872,
+      "relation": "activates"
+    },
+    {
+      "source": "CASP3",
+      "target": "CHEK2",
+      "confidence": 0.7141641357541084,
+      "relation": "related_to"
+    },
+    {
+      "source": "CDK6",
+      "target": "RAD51",
+      "confidence": 0.7136416720360825,
+      "relation": "related_to"
+    },
+    {
+      "source": "RAD51",
+      "target": "CDK6",
+      "confidence": 0.7136416720360825,
+      "relation": "related_to"
+    },
+    {
+      "source": "ATM",
+      "target": "MYC",
+      "confidence": 0.7112648274041713,
+      "relation": "activates"
+    },
+    {
+      "source": "EGFR",
+      "target": "RAF1",
+      "confidence": 0.7105365797558427,
+      "relation": "activates"
+    },
+    {
+      "source": "EGFR",
+      "target": "BRAF",
+      "confidence": 0.7105365797558427,
+      "relation": "activates"
+    },
+    {
+      "source": "RAD51",
+      "target": "JAK2",
+      "confidence": 0.7102086018041238,
+      "relation": "related_to"
+    },
+    {
+      "source": "CHEK2",
+      "target": "RAD51",
+      "confidence": 0.7096933346591325,
+      "relation": "related_to"
+    },
+    {
+      "source": "RAD51",
+      "target": "CHEK2",
+      "confidence": 0.7096933346591325,
+      "relation": "related_to"
+    },
+    {
+      "source": "CHEK2",
+      "target": "KRAS",
+      "confidence": 0.7091673892736434,
+      "relation": "activates"
+    },
+    {
+      "source": "AKT1",
+      "target": "KRAS",
+      "confidence": 0.707862960393727,
+      "relation": "activates"
+    },
+    {
+      "source": "PTEN",
+      "target": "BAX",
+      "confidence": 0.7060165639982001,
+      "relation": "inhibits"
+    },
+    {
+      "source": "BRAF",
+      "target": "ERK2",
+      "confidence": 0.7034476396184415,
+      "relation": "phosphorylates"
+    },
+    {
+      "source": "BRAF",
+      "target": "ERK1",
+      "confidence": 0.7034476396184415,
+      "relation": "phosphorylates"
+    },
+    {
+      "source": "BRCA2",
+      "target": "PTEN",
+      "confidence": 0.7021262669563294,
+      "relation": "related_to"
+    },
+    {
+      "source": "PTEN",
+      "target": "BRCA2",
+      "confidence": 0.7021262669563294,
+      "relation": "related_to"
+    },
+    {
+      "source": "EGFR",
+      "target": "BCL2",
+      "confidence": 0.7008864814908244,
+      "relation": "activates"
+    },
+    {
+      "source": "MET",
+      "target": "CASP9",
+      "confidence": 0.7000031250000001,
+      "relation": "activates"
+    },
+    {
+      "source": "AKT1",
+      "target": "BRAF",
+      "confidence": 0.6997680178284645,
+      "relation": "activates"
+    },
+    {
+      "source": "AKT1",
+      "target": "RAF1",
+      "confidence": 0.6997680178284645,
+      "relation": "activates"
+    },
+    {
+      "source": "PIK3CA",
+      "target": "BCL2",
+      "confidence": 0.6977701384337992,
+      "relation": "activates"
+    }
+  ],
+  "text_all_predictions": [
+    {
+      "source": "KRAS",
+      "target": "MYC",
+      "confidence": 0.7,
+      "relation": "activates"
+    },
+    {
+      "source": "EGFR",
+      "target": "MYC",
+      "confidence": 0.6920961875,
+      "relation": "activates"
+    },
+    {
+      "source": "PTEN",
+      "target": "BAX",
+      "confidence": 0.6901375000000001,
+      "relation": "inhibits"
+    },
+    {
+      "source": "EGFR",
+      "target": "BRAF",
+      "confidence": 0.6838125,
+      "relation": "activates"
+    },
+    {
+      "source": "EGFR",
+      "target": "RAF1",
+      "confidence": 0.6838125,
+      "relation": "activates"
+    },
+    {
+      "source": "BRCA1",
+      "target": "RAD51",
+      "confidence": 0.6798244821175934,
+      "relation": "interacts"
+    },
+    {
+      "source": "NRAS",
+      "target": "MYC",
+      "confidence": 0.67981125,
+      "relation": "activates"
+    },
+    {
+      "source": "PIK3CA",
+      "target": "MYC",
+      "confidence": 0.67981125,
+      "relation": "activates"
+    },
+    {
+      "source": "STAT3",
+      "target": "KRAS",
+      "confidence": 0.6773156250000001,
+      "relation": "activates"
+    },
+    {
+      "source": "RAF1",
+      "target": "TP53",
+      "confidence": 0.6773156250000001,
+      "relation": "phosphorylates"
+    },
+    {
+      "source": "BRAF",
+      "target": "TP53",
+      "confidence": 0.6773156250000001,
+      "relation": "phosphorylates"
+    },
+    {
+      "source": "PIK3CA",
+      "target": "KRAS",
+      "confidence": 0.6773156250000001,
+      "relation": "activates"
+    },
+    {
+      "source": "CDK6",
+      "target": "TP53",
+      "confidence": 0.6773156250000001,
+      "relation": "phosphorylates"
+    },
+    {
+      "source": "CDK4",
+      "target": "TP53",
+      "confidence": 0.6773156250000001,
+      "relation": "phosphorylates"
+    },
+    {
+      "source": "NRAS",
+      "target": "KRAS",
+      "confidence": 0.6773156250000001,
+      "relation": "activates"
+    },
+    {
+      "source": "PIK3CA",
+      "target": "PTEN",
+      "confidence": 0.675,
+      "relation": "related_to"
+    },
+    {
+      "source": "BRCA2",
+      "target": "BRCA1",
+      "confidence": 0.675,
+      "relation": "related_to"
+    },
+    {
+      "source": "PIK3CA",
+      "target": "NRAS",
+      "confidence": 0.675,
+      "relation": "related_to"
+    },
+    {
+      "source": "RB1",
+      "target": "BAX",
+      "confidence": 0.675,
+      "relation": "inhibits"
+    },
+    {
+      "source": "NRAS",
+      "target": "PIK3CA",
+      "confidence": 0.675,
+      "relation": "related_to"
+    },
+    {
+      "source": "BRCA2",
+      "target": "PTEN",
+      "confidence": 0.675,
+      "relation": "related_to"
+    },
+    {
+      "source": "STAT5",
+      "target": "STAT3",
+      "confidence": 0.675,
+      "relation": "related_to"
+    },
+    {
+      "source": "STAT3",
+      "target": "STAT5",
+      "confidence": 0.675,
+      "relation": "related_to"
+    },
+    {
+      "source": "PTEN",
+      "target": "BRCA2",
+      "confidence": 0.675,
+      "relation": "related_to"
+    },
+    {
+      "source": "RAF1",
+      "target": "ERK2",
+      "confidence": 0.6737612500000001,
+      "relation": "phosphorylates"
+    },
+    {
+      "source": "RAF1",
+      "target": "ERK1",
+      "confidence": 0.6737612500000001,
+      "relation": "phosphorylates"
+    },
+    {
+      "source": "AKT1",
+      "target": "CASP9",
+      "confidence": 0.6736309523809525,
+      "relation": "activates"
+    },
+    {
+      "source": "TP53",
+      "target": "BCL2",
+      "confidence": 0.6736309523809525,
+      "relation": "activates"
+    },
+    {
+      "source": "PIK3CA",
+      "target": "BCL2",
+      "confidence": 0.6721250000000001,
+      "relation": "activates"
+    },
+    {
+      "source": "BRAF",
+      "target": "ERK2",
+      "confidence": 0.6704749999999999,
+      "relation": "phosphorylates"
+    },
+    {
+      "source": "BRAF",
+      "target": "ERK1",
+      "confidence": 0.6704749999999999,
+      "relation": "phosphorylates"
+    },
+    {
+      "source": "MET",
+      "target": "BRAF",
+      "confidence": 0.6697875,
+      "relation": "activates"
+    },
+    {
+      "source": "MET",
+      "target": "RAF1",
+      "confidence": 0.6697875,
+      "relation": "activates"
+    },
+    {
+      "source": "CHEK2",
+      "target": "JAK2",
+      "confidence": 0.6686954373121262,
+      "relation": "related_to"
+    },
+    {
+      "source": "EGFR",
+      "target": "BCL2",
+      "confidence": 0.6674500000000001,
+      "relation": "activates"
+    },
+    {
+      "source": "BAX",
+      "target": "CASP3",
+      "confidence": 0.6673331250000001,
+      "relation": "activates"
+    },
+    {
+      "source": "CASP3",
+      "target": "CASP9",
+      "confidence": 0.665181040763855,
+      "relation": "related_to"
+    },
+    {
+      "source": "ERBB2",
+      "target": "BRAF",
+      "confidence": 0.6651125,
+      "relation": "activates"
+    },
+    {
+      "source": "ERBB2",
+      "target": "RAF1",
+      "confidence": 0.6651125,
+      "relation": "activates"
+    },
+    {
+      "source": "JAK2",
+      "target": "MEK1",
+      "confidence": 0.6648375,
+      "relation": "phosphorylates"
+    },
+    {
+      "source": "PIK3CA",
+      "target": "BRAF",
+      "confidence": 0.6648375,
+      "relation": "activates"
+    },
+    {
+      "source": "KRAS",
+      "target": "MEK1",
+      "confidence": 0.6643749999999999,
+      "relation": "composed_activates_phosphorylates"
+    },
+    {
+      "source": "CDK4",
+      "target": "E2F1",
+      "confidence": 0.66225,
+      "relation": "composed_phosphorylates_inhibits"
+    },
+    {
+      "source": "ATM",
+      "target": "MDM2",
+      "confidence": 0.66225,
+      "relation": "composed_phosphorylates_regulated_by"
+    },
+    {
+      "source": "STAT5",
+      "target": "JAK2",
+      "confidence": 0.661742912371134,
+      "relation": "related_to"
+    },
+    {
+      "source": "CHEK2",
+      "target": "RAD51",
+      "confidence": 0.6608060630166045,
+      "relation": "related_to"
+    },
+    {
+      "source": "CCND1",
+      "target": "RB1",
+      "confidence": 0.660125,
+      "relation": "composed_binds_phosphorylates"
+    },
+    {
+      "source": "CHEK2",
+      "target": "CDK6",
+      "confidence": 0.6600125351548196,
+      "relation": "related_to"
+    },
+    {
+      "source": "MEK1",
+      "target": "MYC",
+      "confidence": 0.6593266526993364,
+      "relation": "activates"
+    },
+    {
+      "source": "CDK6",
+      "target": "E2F1",
+      "confidence": 0.6579999999999999,
+      "relation": "composed_phosphorylates_inhibits"
+    }
+  ]
+}

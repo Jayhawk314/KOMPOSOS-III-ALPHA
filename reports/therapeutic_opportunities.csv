@@ -1,0 +1,94 @@
+tier,rank,source,target,confidence,novelty,therapeutic_score,source_drugs,target_drugs,system
+1,1,CDK6,JAK2,0.7175,NOVEL,0.7175,"Palbociclib, Ribociclib, Abemaciclib","Ruxolitinib, Fedratinib",Biological
+1,2,CDK6,PIK3CA,0.7175,NOVEL,0.7175,"Palbociclib, Ribociclib, Abemaciclib",Alpelisib,Biological
+1,3,PIK3CA,JAK2,0.7167447697506837,NOVEL,0.7167,Alpelisib,"Ruxolitinib, Fedratinib",Biological
+1,4,JAK2,PIK3CA,0.7167447697506837,NOVEL,0.7167,"Ruxolitinib, Fedratinib",Alpelisib,Biological
+1,5,EGFR,RAF1,0.7105365797558427,NOVEL,0.7105,"Erlotinib, Gefitinib, Afatinib, Osimertinib, Cetuximab",Sorafenib,Biological
+1,6,EGFR,BRAF,0.7105365797558427,NOVEL,0.7105,"Erlotinib, Gefitinib, Afatinib, Osimertinib, Cetuximab","Vemurafenib, Dabrafenib, Encorafenib",Biological
+1,7,AKT1,KRAS,0.707862960393727,NOVEL,0.7079,Capivasertib (Truqap),"Sotorasib, Adagrasib",Biological
+1,8,EGFR,BCL2,0.7008864814908244,NOVEL,0.7009,"Erlotinib, Gefitinib, Afatinib, Osimertinib, Cetuximab",Venetoclax,Biological
+1,9,AKT1,BRAF,0.6997680178284645,NOVEL,0.6998,Capivasertib (Truqap),"Vemurafenib, Dabrafenib, Encorafenib",Biological
+1,10,AKT1,RAF1,0.6997680178284645,NOVEL,0.6998,Capivasertib (Truqap),Sorafenib,Biological
+1,11,PIK3CA,BCL2,0.6977701384337992,NOVEL,0.6978,Alpelisib,Venetoclax,Biological
+1,12,EGFR,BRAF,0.6838125,NOVEL,0.6838,"Erlotinib, Gefitinib, Afatinib, Osimertinib, Cetuximab","Vemurafenib, Dabrafenib, Encorafenib",Text
+1,13,EGFR,RAF1,0.6838125,NOVEL,0.6838,"Erlotinib, Gefitinib, Afatinib, Osimertinib, Cetuximab",Sorafenib,Text
+1,14,PIK3CA,KRAS,0.6773156250000001,NOVEL,0.6773,Alpelisib,"Sotorasib, Adagrasib",Text
+1,15,PIK3CA,BCL2,0.6721250000000001,NOVEL,0.6721,Alpelisib,Venetoclax,Text
+1,16,MET,BRAF,0.6697875,NOVEL,0.6698,"Capmatinib, Tepotinib","Vemurafenib, Dabrafenib, Encorafenib",Text
+1,17,MET,RAF1,0.6697875,NOVEL,0.6698,"Capmatinib, Tepotinib",Sorafenib,Text
+1,18,EGFR,BCL2,0.6674500000000001,NOVEL,0.6675,"Erlotinib, Gefitinib, Afatinib, Osimertinib, Cetuximab",Venetoclax,Text
+1,19,ERBB2,BRAF,0.6651125,NOVEL,0.6651,"Trastuzumab, Pertuzumab, Ado-trastuzumab, Lapatinib","Vemurafenib, Dabrafenib, Encorafenib",Text
+1,20,ERBB2,RAF1,0.6651125,NOVEL,0.6651,"Trastuzumab, Pertuzumab, Ado-trastuzumab, Lapatinib",Sorafenib,Text
+1,21,PIK3CA,BRAF,0.6648375,NOVEL,0.6648,Alpelisib,"Vemurafenib, Dabrafenib, Encorafenib",Text
+2,22,BRAF,MYC,0.7294815116524698,NOVEL,0.3647,"Vemurafenib, Dabrafenib, Encorafenib","Indirect: BET inhibitors - clinical trials, CDK7 inhibitors",Biological
+2,23,MTOR,CHEK2,0.7181875000000001,NOVEL,0.3591,"Everolimus, Temsirolimus",Indirect: CHK1 inhibitors - clinical trials,Biological
+2,24,BRCA2,JAK2,0.7175,NOVEL,0.3588,"Indirect: PARP inhibitors (Olaparib, Rucaparib)","Ruxolitinib, Fedratinib",Biological
+2,25,NRAS,CDK6,0.7175,NOVEL,0.3588,Indirect: MEK inhibitors (Trametinib),"Palbociclib, Ribociclib, Abemaciclib",Biological
+2,26,CHEK2,CDK6,0.7175,NOVEL,0.3588,Indirect: CHK1 inhibitors - clinical trials,"Palbociclib, Ribociclib, Abemaciclib",Biological
+2,27,CHEK2,JAK2,0.7175,NOVEL,0.3588,Indirect: CHK1 inhibitors - clinical trials,"Ruxolitinib, Fedratinib",Biological
+2,28,PIK3CA,NRAS,0.7175,NOVEL,0.3588,Alpelisib,Indirect: MEK inhibitors (Trametinib),Biological
+2,29,NRAS,PIK3CA,0.7175,NOVEL,0.3588,Indirect: MEK inhibitors (Trametinib),Alpelisib,Biological
+2,30,RAD51,PIK3CA,0.7175,NOVEL,0.3588,Indirect: PARP inhibitors,Alpelisib,Biological
+2,31,CHEK2,PIK3CA,0.7162295026056926,NOVEL,0.3581,Indirect: CHK1 inhibitors - clinical trials,Alpelisib,Biological
+2,32,PIK3CA,CHEK2,0.7162295026056926,NOVEL,0.3581,Alpelisib,Indirect: CHK1 inhibitors - clinical trials,Biological
+2,33,CDK6,RAD51,0.7136416720360825,NOVEL,0.3568,"Palbociclib, Ribociclib, Abemaciclib",Indirect: PARP inhibitors,Biological
+2,34,RAD51,CDK6,0.7136416720360825,NOVEL,0.3568,Indirect: PARP inhibitors,"Palbociclib, Ribociclib, Abemaciclib",Biological
+2,35,RAD51,JAK2,0.7102086018041238,NOVEL,0.3551,Indirect: PARP inhibitors,"Ruxolitinib, Fedratinib",Biological
+2,36,CHEK2,KRAS,0.7091673892736434,NOVEL,0.3546,Indirect: CHK1 inhibitors - clinical trials,"Sotorasib, Adagrasib",Biological
+2,37,BRAF,ERK2,0.7034476396184415,NOVEL,0.3517,"Vemurafenib, Dabrafenib, Encorafenib",None,Biological
+2,38,BRAF,ERK1,0.7034476396184415,NOVEL,0.3517,"Vemurafenib, Dabrafenib, Encorafenib",None,Biological
+2,39,MET,CASP9,0.7000031250000001,NOVEL,0.3500,"Capmatinib, Tepotinib",None,Biological
+2,40,KRAS,MYC,0.7,NOVEL,0.3500,"Sotorasib, Adagrasib","Indirect: BET inhibitors - clinical trials, CDK7 inhibitors",Text
+2,41,EGFR,MYC,0.6920961875,NOVEL,0.3460,"Erlotinib, Gefitinib, Afatinib, Osimertinib, Cetuximab","Indirect: BET inhibitors - clinical trials, CDK7 inhibitors",Text
+2,42,PIK3CA,MYC,0.67981125,NOVEL,0.3399,Alpelisib,"Indirect: BET inhibitors - clinical trials, CDK7 inhibitors",Text
+2,43,STAT3,KRAS,0.6773156250000001,NOVEL,0.3387,Indirect: JAK inhibitors,"Sotorasib, Adagrasib",Text
+2,44,RAF1,TP53,0.6773156250000001,NOVEL,0.3387,Sorafenib,"Indirect: APR-246 (eprenetapopt) - clinical trials, MDM2 inhibitors",Text
+2,45,BRAF,TP53,0.6773156250000001,NOVEL,0.3387,"Vemurafenib, Dabrafenib, Encorafenib","Indirect: APR-246 (eprenetapopt) - clinical trials, MDM2 inhibitors",Text
+2,46,CDK6,TP53,0.6773156250000001,NOVEL,0.3387,"Palbociclib, Ribociclib, Abemaciclib","Indirect: APR-246 (eprenetapopt) - clinical trials, MDM2 inhibitors",Text
+2,47,NRAS,KRAS,0.6773156250000001,NOVEL,0.3387,Indirect: MEK inhibitors (Trametinib),"Sotorasib, Adagrasib",Text
+2,48,PIK3CA,NRAS,0.675,NOVEL,0.3375,Alpelisib,Indirect: MEK inhibitors (Trametinib),Text
+2,49,NRAS,PIK3CA,0.675,NOVEL,0.3375,Indirect: MEK inhibitors (Trametinib),Alpelisib,Text
+2,50,RAF1,ERK2,0.6737612500000001,NOVEL,0.3369,Sorafenib,None,Text
+2,51,RAF1,ERK1,0.6737612500000001,NOVEL,0.3369,Sorafenib,None,Text
+2,52,AKT1,CASP9,0.6736309523809525,NOVEL,0.3368,Capivasertib (Truqap),None,Text
+2,53,TP53,BCL2,0.6736309523809525,NOVEL,0.3368,"Indirect: APR-246 (eprenetapopt) - clinical trials, MDM2 inhibitors",Venetoclax,Text
+2,54,BRAF,ERK2,0.6704749999999999,NOVEL,0.3352,"Vemurafenib, Dabrafenib, Encorafenib",None,Text
+2,55,BRAF,ERK1,0.6704749999999999,NOVEL,0.3352,"Vemurafenib, Dabrafenib, Encorafenib",None,Text
+2,56,CHEK2,JAK2,0.6686954373121262,NOVEL,0.3343,Indirect: CHK1 inhibitors - clinical trials,"Ruxolitinib, Fedratinib",Text
+2,57,JAK2,MEK1,0.6648375,NOVEL,0.3324,"Ruxolitinib, Fedratinib",None,Text
+2,58,KRAS,MEK1,0.6643749999999999,NOVEL,0.3322,"Sotorasib, Adagrasib",None,Text
+2,59,CDK4,E2F1,0.66225,NOVEL,0.3311,"Palbociclib, Ribociclib, Abemaciclib",None,Text
+2,60,CHEK2,CDK6,0.6600125351548196,NOVEL,0.3300,Indirect: CHK1 inhibitors - clinical trials,"Palbociclib, Ribociclib, Abemaciclib",Text
+2,61,CDK6,E2F1,0.6579999999999999,NOVEL,0.3290,"Palbociclib, Ribociclib, Abemaciclib",None,Text
+3,62,CHEK2,MYC,0.7271052139252425,NOVEL,0.0727,Indirect: CHK1 inhibitors - clinical trials,"Indirect: BET inhibitors - clinical trials, CDK7 inhibitors",Biological
+3,63,MYC,CHEK2,0.7181875000000001,NOVEL,0.0718,"Indirect: BET inhibitors - clinical trials, CDK7 inhibitors",Indirect: CHK1 inhibitors - clinical trials,Biological
+3,64,MDM2,CHEK2,0.7181875000000001,NOVEL,0.0718,Indirect: MDM2 inhibitors - clinical trials,Indirect: CHK1 inhibitors - clinical trials,Biological
+3,65,CASP3,PTEN,0.7175,NOVEL,0.0718,Indirect: IAP inhibitors,Indirect: PI3K inhibitors,Biological
+3,66,CASP3,NRAS,0.7175,NOVEL,0.0718,Indirect: IAP inhibitors,Indirect: MEK inhibitors (Trametinib),Biological
+3,67,STAT5,PTEN,0.7175,NOVEL,0.0718,Indirect: JAK inhibitors,Indirect: PI3K inhibitors,Biological
+3,68,NRAS,CASP3,0.7175,NOVEL,0.0718,Indirect: MEK inhibitors (Trametinib),Indirect: IAP inhibitors,Biological
+3,69,NRAS,PTEN,0.7175,NOVEL,0.0718,Indirect: MEK inhibitors (Trametinib),Indirect: PI3K inhibitors,Biological
+3,70,NRAS,CHEK2,0.7175,NOVEL,0.0718,Indirect: MEK inhibitors (Trametinib),Indirect: CHK1 inhibitors - clinical trials,Biological
+3,71,PTEN,CHEK2,0.7166355646761393,NOVEL,0.0717,Indirect: PI3K inhibitors,Indirect: CHK1 inhibitors - clinical trials,Biological
+3,72,MDM2,MYC,0.7152071439139545,NOVEL,0.0715,Indirect: MDM2 inhibitors - clinical trials,"Indirect: BET inhibitors - clinical trials, CDK7 inhibitors",Biological
+3,73,ATR,MYC,0.7149126010201872,NOVEL,0.0715,None,"Indirect: BET inhibitors - clinical trials, CDK7 inhibitors",Biological
+3,74,CASP3,CHEK2,0.7141641357541084,NOVEL,0.0714,Indirect: IAP inhibitors,Indirect: CHK1 inhibitors - clinical trials,Biological
+3,75,ATM,MYC,0.7112648274041713,NOVEL,0.0711,Indirect: ATR inhibitors - clinical trials,"Indirect: BET inhibitors - clinical trials, CDK7 inhibitors",Biological
+3,76,CHEK2,RAD51,0.7096933346591325,NOVEL,0.0710,Indirect: CHK1 inhibitors - clinical trials,Indirect: PARP inhibitors,Biological
+3,77,RAD51,CHEK2,0.7096933346591325,NOVEL,0.0710,Indirect: PARP inhibitors,Indirect: CHK1 inhibitors - clinical trials,Biological
+3,78,PTEN,BAX,0.7060165639982001,NOVEL,0.0706,Indirect: PI3K inhibitors,Indirect: BCL2 inhibitors,Biological
+3,79,BRCA2,PTEN,0.7021262669563294,NOVEL,0.0702,"Indirect: PARP inhibitors (Olaparib, Rucaparib)",Indirect: PI3K inhibitors,Biological
+3,80,PTEN,BRCA2,0.7021262669563294,NOVEL,0.0702,Indirect: PI3K inhibitors,"Indirect: PARP inhibitors (Olaparib, Rucaparib)",Biological
+3,81,PTEN,BAX,0.6901375000000001,NOVEL,0.0690,Indirect: PI3K inhibitors,Indirect: BCL2 inhibitors,Text
+3,82,BRCA1,RAD51,0.6798244821175934,NOVEL,0.0680,"Indirect: PARP inhibitors (Olaparib, Rucaparib)",Indirect: PARP inhibitors,Text
+3,83,NRAS,MYC,0.67981125,NOVEL,0.0680,Indirect: MEK inhibitors (Trametinib),"Indirect: BET inhibitors - clinical trials, CDK7 inhibitors",Text
+3,84,RB1,BAX,0.675,NOVEL,0.0675,Indirect: CDK4/6 inhibitors,Indirect: BCL2 inhibitors,Text
+3,85,BRCA2,PTEN,0.675,NOVEL,0.0675,"Indirect: PARP inhibitors (Olaparib, Rucaparib)",Indirect: PI3K inhibitors,Text
+3,86,STAT5,STAT3,0.675,NOVEL,0.0675,Indirect: JAK inhibitors,Indirect: JAK inhibitors,Text
+3,87,STAT3,STAT5,0.675,NOVEL,0.0675,Indirect: JAK inhibitors,Indirect: JAK inhibitors,Text
+3,88,PTEN,BRCA2,0.675,NOVEL,0.0675,Indirect: PI3K inhibitors,"Indirect: PARP inhibitors (Olaparib, Rucaparib)",Text
+3,89,BAX,CASP3,0.6673331250000001,NOVEL,0.0667,Indirect: BCL2 inhibitors,Indirect: IAP inhibitors,Text
+3,90,ATM,MDM2,0.66225,NOVEL,0.0662,Indirect: ATR inhibitors - clinical trials,Indirect: MDM2 inhibitors - clinical trials,Text
+3,91,CHEK2,RAD51,0.6608060630166045,NOVEL,0.0661,Indirect: CHK1 inhibitors - clinical trials,Indirect: PARP inhibitors,Text
+3,92,CCND1,RB1,0.660125,NOVEL,0.0660,None,Indirect: CDK4/6 inhibitors,Text
+3,93,MEK1,MYC,0.6593266526993364,NOVEL,0.0659,None,"Indirect: BET inhibitors - clinical trials, CDK7 inhibitors",Text
