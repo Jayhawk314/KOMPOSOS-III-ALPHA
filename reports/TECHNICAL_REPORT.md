@@ -829,7 +829,7 @@ reports/
 
 ### 9.3 Code Availability
 
-**Repository:** https://github.com/[username]/KOMPOSOS-III
+**Repository:** https://github.com/[username]/KOMPOSOS-III-ALPHA
 
 **Key Files:**
 ```
