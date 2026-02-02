@@ -1,0 +1,29 @@
+{
+  "total_validated": 3,
+  "compositional_count": 3,
+  "deep_count": 0,
+  "original_precision": 0.06,
+  "compositional_precision": 0.06,
+  "deep_precision": 0.0,
+  "compositional_hits": [
+    {
+      "source": "EGFR",
+      "target": "RAF1",
+      "confidence": 0.7105365797558427,
+      "classification": "2-HOP"
+    },
+    {
+      "source": "EGFR",
+      "target": "BRAF",
+      "confidence": 0.7105365797558427,
+      "classification": "2-HOP"
+    },
+    {
+      "source": "PTEN",
+      "target": "BAX",
+      "confidence": 0.7060165639982001,
+      "classification": "2-HOP"
+    }
+  ],
+  "deep_hits": []
+}

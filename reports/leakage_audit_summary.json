@@ -1,0 +1,17 @@
+{
+  "total_predictions": 100,
+  "direct_in_training": 7,
+  "original_novelty": 93,
+  "original_novelty_rate": 0.93,
+  "compositional_leakage": 39,
+  "truly_novel": 54,
+  "deep_discovery_rate": 0.54,
+  "classification_breakdown": {
+    "TRULY_NOVEL": 54,
+    "2-HOP": 32,
+    "DIRECT_REVERSE": 7,
+    "3-HOP": 4,
+    "2-HOP_REVERSE": 2,
+    "3-HOP_REVERSE": 1
+  }
+}
