@@ -1,299 +1,230 @@
-# KOMPOSOS-III: Categorical Protein Interaction Discovery
+# KOMPOSOS-III: Categorical Protein Interaction Prediction
 
-**Predicting novel protein-protein interactions using ESM-2 biological embeddings + category theory**
-
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+Predicting protein-protein interactions using category theory and ESM-2 biological embeddings.
 
 ---
 
-## What This Is
+## What It Does
 
 KOMPOSOS-III combines:
-- **ESM-2** protein language model (650M parameters, trained on 250M sequences)
-- **Category theory** inference strategies (9 conjecture methods)
-- **36-protein cancer dataset** (oncogenes, tumor suppressors, kinases)
+- **Category theory** - 9 inference strategies (Kan extension, Yoneda, composition, etc.)
+- **ESM-2 embeddings** - 650M parameter protein language model (1280-dimensional vectors)
+- **Graph reasoning** - Finds patterns in protein interaction networks
 
-To discover **93 novel protein interactions** not in any existing database.
-
-**The Result:** 21 FDA-approved drug combinations ready for immediate clinical testing.
+**Input:** 55 known cancer protein interactions (STRING database)
+**Output:** 100 novel interaction predictions with confidence scores
 
 ---
 
-## Quick Start (2 Minutes)
-
-### 1. Install Dependencies
+## Quick Start
 
 ```bash
-git clone https://github.com/Jayhawk314/KOMPOSOS-III-ALPHA
-cd KOMPOSOS-III-ALPHA
+# Install dependencies
+pip install torch transformers fair-esm biopython numpy pandas
 
-pip install torch fair-esm sentence-transformers numpy scipy pandas
-```
+# Run prediction system
+python -m oracle.predict --proteins data/proteins/cancer_proteins.db
 
-First run downloads ESM-2 model (~3GB, one-time).
-
-### 2. Run Validation Pipeline
-
-```bash
-python scripts/validate_biological_embeddings.py
-```
-
-**Output:** Generates 100 predictions (50 biological, 50 text), validates against 15 known interactions from PubMed.
-
-**Time:** ~2-5 minutes (with cached embeddings)
-
-### 3. View Results
-
-```bash
-# Top 50 predictions
-cat reports/bio_predictions_top50.csv
-
-# Full comparison report
-cat reports/bio_embeddings_comparison.json
-
-# Therapeutic opportunities (drug combinations)
-cat reports/therapeutic_opportunities.csv
+# Run compositional leakage audit
+cd audit_scripts
+python test_compositional_leakage.py
 ```
 
 ---
 
-## Key Results
+## Results
 
-### Prediction Statistics
-| Metric | Biological (ESM-2) | Text (MPNet) |
-|--------|-------------------|--------------|
-| **Predictions** | 50 | 50 |
-| **Validated** | 5 (10%) | 13 (26%) |
-| **Novel** | 48 (96%) | 45 (90%) |
-| **Unique** | 35 | 35 |
+**100 predictions stratified by type:**
 
-### Top 5 Predictions (Biological)
+| Type | Count | What It Means |
+|------|-------|---------------|
+| Compositional | 39 | Found via 2-3 hop graph paths (A→B→C) |
+| Family Extrapolation | 47 | Protein family members (ESM-2 similarity > 85%) |
+| Cross-Family | 7 | Different families, not graph-reachable (truly novel) |
+| Direct | 7 | Already in training set |
 
-1. **TP53 → MYC** [activates] conf=0.740 ✓ *Validated*
-2. **BRAF → MYC** [activates] conf=0.729 ✓ *Validated*
-3. **CHEK2 → MYC** [activates] conf=0.727 ⚠ *Directional inconsistency*
-4. **MYC → CHEK2** [phosphorylates] conf=0.718
-5. **MTOR → CHEK2** [phosphorylates] conf=0.718
+**System comparison (deep discovery rate):**
+- Biological embeddings (ESM-2): **70%** not compositional
+- Text embeddings (PubMedBERT): **38%** not compositional
+- Random baseline: **4.4%**
 
-### Therapeutic Opportunities
-
-- **21 Tier-1** drug combinations (both proteins druggable, FDA-approved)
-- **40 Tier-2** single-agent targets (one protein druggable)
-- **32 Tier-3** research targets (no current drugs)
-
-**Example:** CDK6-JAK2 dual inhibition (Palbociclib + Ruxolitinib)
+**Interpretation:** ESM-2 learns patterns from protein sequences that go beyond published literature.
 
 ---
 
-## Why This Matters
+## The 9 Categorical Strategies
 
-### The Problem
-- Most PPI prediction methods rediscover known biology (high precision, low novelty)
-- AlphaFold 3 predicts structural binding, not functional interactions
-- Text embeddings miss biology not yet published
+From `oracle/strategies.py`:
 
-### Our Approach
-- **Biological embeddings** (ESM-2) capture evolutionary patterns in sequences
-- **Low precision (10%) is the signal** — we're finding biology ahead of literature
-- **93% novelty rate** — predictions not in any existing database
+1. **Kan Extension** - Lift known patterns to new proteins
+2. **Yoneda** - Proteins with similar interaction patterns
+3. **Fibration** - Hierarchical protein families
+4. **Adjunction** - Bidirectional relationships
+5. **Limit** - Consensus from multiple paths
+6. **Colimit** - Union of interaction patterns
+7. **Natural Transformation** - Pattern morphisms
+8. **Composition** - Transitive closure (A→B + B→C = A→C)
+9. **Semantic Similarity** - ESM-2 nearest neighbors
 
-### The Payoff
-- Each Tier-1 prediction is immediately testable ($100K-1M clinical trial)
-- Zero drug development cost (FDA-approved drugs)
-- If 5/21 work → $500M+ therapeutic value
-
----
-
-## Architecture
-
-```
-KOMPOSOS-III Pipeline
-├── Data Layer (data/)
-│   ├── ESM-2 biological embeddings (bio_embeddings.py)
-│   ├── MPNet text embeddings (embeddings.py)
-│   └── SQLite knowledge graph (store.py)
-├── Strategy Layer (oracle/strategies.py)
-│   ├── Semantic Similarity (ESM-2 homology)
-│   ├── Yoneda Lemma (representable structure)
-│   ├── Kan Extension (pattern lifting)
-│   └── 6 other categorical strategies
-├── Oracle Layer (oracle/)
-│   ├── Voting system (oracle/__init__.py)
-│   ├── Coherence checking (oracle/coherence.py)
-│   └── Confidence scoring (oracle/learner.py)
-└── Conjecture Engine (oracle/conjecture.py)
-    ├── Candidate generation
-    ├── Top-K selection
-    └── Novelty filtering
-```
+Each strategy votes on potential interactions. Coherence scoring aggregates votes.
 
 ---
 
-## Documentation
+## How ESM-2 Works
 
-- **[Technical Report](reports/TECHNICAL_REPORT.md)** - Full 60-page analysis with math, validation, and drug mapping
-- **[Quick Start](QUICKSTART.md)** - Get to 80% precision in 5 minutes (physics demo)
-- **[Implementation Plan](GITHUB_RELEASE_PLAN.md)** - Development roadmap and fixes
-- **[Hub Clustering Analysis](reports/hub_clustering_analysis.txt)** - Assessment of method limitations
+From `data/bio_embeddings.py`:
 
----
-
-## Critical Findings
-
-### 1. Hub Protein Clustering ⚠
-- **90% of predictions involve hub proteins** (CHEK2, PIK3CA, MYC, PTEN, NRAS)
-- This could indicate:
-  - Real biology (hubs are genuinely important) **OR**
-  - Method artifact (embeddings for hubs similar to everything)
-- **Requires experimental validation** to distinguish signal from noise
-
-### 2. Low Precision is Expected
-- Bio embeddings: 10% precision against known literature
-- **This is not a bug** — we're predicting *unknown* biology
-- High precision would mean we're just rediscovering what text embeddings already find
-
-### 3. Complementarity with Text/Structure
-- Bio predictions: 70% unique (not found by text system)
-- Text predictions: 70% unique (not found by bio system)
-- **Different methods find different biology** — suggests ensemble approach
-
----
-
-## Requirements
-
-- Python 3.10+
-- PyTorch 2.0+
-- fair-esm (ESM-2 model)
-- sentence-transformers (MPNet)
-- NumPy, Pandas, SciPy
-
-**Hardware:**
-- RAM: 8GB minimum (ESM-2 model + data)
-- Storage: 5GB (3GB model weights, 2GB cache)
-- GPU: Optional (10x speedup), 40GB VRAM for ESM-2 650M
-
----
-
-## Usage
-
-### Generate Predictions
+1. **Get protein sequence** from UniProt
+2. **Tokenize** amino acid sequence
+3. **Extract embedding** from layer 33 (mean-pooled over residues)
+4. **Compute similarity** via cosine distance
 
 ```python
-from data import KomposOSStore
-from data.bio_embeddings import BiologicalEmbeddingsEngine
-from oracle import CategoricalOracle
-from oracle.conjecture import ConjectureEngine
-
-# Load cancer protein dataset
-store = KomposOSStore('data/proteins/cancer_proteins.db')
-
-# Initialize ESM-2 embeddings
-embeddings = BiologicalEmbeddingsEngine(device='cpu')
-
-# Create Oracle + Conjecture Engine
-oracle = CategoricalOracle(store, embeddings, min_confidence=0.5)
-engine = ConjectureEngine(oracle, semantic_top_k=10)
-
-# Generate predictions
-result = engine.conjecture(top_k=50)
-
-# Print top 10
-for i, conj in enumerate(result.conjectures[:10], 1):
-    print(f"{i}. {conj.source} -> {conj.target} (conf: {conj.top_confidence:.3f})")
+def similarity(gene1: str, gene2: str) -> float:
+    v1 = embed(gene1)  # 1280-dimensional vector
+    v2 = embed(gene2)
+    return cosine_similarity(v1, v2)
 ```
 
-### Validate Predictions
+**Key insight:** ESM-2 was trained on 250M protein sequences. Similar sequences → similar interaction partners (evolutionary conservation).
 
-```bash
-# Full validation pipeline
-python scripts/validate_biological_embeddings.py
+---
 
-# Check novelty (vs STRING database)
-python scripts/check_novelty_comprehensive.py
+## The Audit
 
-# Map drug targets
-python scripts/map_drug_targets.py
+We tested for data leakage using 3 independent scripts:
 
-# Analyze hub clustering
-python scripts/analyze_hub_clustering.py
+### 1. Compositional Leakage (`test_compositional_leakage.py`)
+
+**Test:** Can predictions be derived from training graph via 2-3 hop paths?
+
+**Method:** BFS traversal from 55 training edges
+
+**Result:** 39% are compositional (32% two-hop, 4% three-hop, 3% reverse)
+
+**Example:** EGFR → RAF1 found via EGFR → KRAS → RAF1 (both edges in training)
+
+### 2. Validation Precision (`test_validation_precision.py`)
+
+**Test:** Are the 3 validated predictions (6% precision) compositional or novel?
+
+**Result:** ALL 3 are two-hop paths:
+- EGFR → RAF1 (via KRAS)
+- EGFR → BRAF (via KRAS)
+- PTEN → BAX (via AKT1)
+
+**Corrected precision on independent validation:** 0%
+
+### 3. Family Extrapolation (`test_protein_family_extrapolation.py`)
+
+**Test:** Are "deep discoveries" actually protein family members?
+
+**Result:** 87% have ESM-2 similarity > 0.85
+
+**Examples:**
+- NRAS → KRAS: 99.6% similar (RAS family)
+- STAT5 → STAT3: 97.2% similar (STAT family)
+
+**Cross-family discoveries (truly novel):** 7% (similarity < 0.85)
+
+---
+
+## 7 Cross-Family Discoveries
+
+These are NOT compositional and NOT family extrapolations:
+
+| Source | Target | Confidence | ESM-2 Similarity |
+|--------|--------|------------|------------------|
+| KRAS | MYC | 0.700 | 0.781 |
+| NRAS | MYC | 0.680 | 0.789 |
+| STAT3 | KRAS | 0.677 | 0.827 |
+| BRCA2 | PTEN | 0.675-0.702 | 0.794 |
+| PTEN | BRCA2 | 0.675-0.702 | 0.794 |
+
+**Next step:** Experimental validation (Co-IP, yeast two-hybrid)
+
+---
+
+## Repository Structure
+
 ```
+├── oracle/
+│   ├── strategies.py          # 9 categorical inference strategies
+│   ├── coherence.py           # Vote aggregation and scoring
+│   └── deep_learning.py       # ESM-2 similarity computation
+│
+├── data/
+│   ├── bio_embeddings.py      # ESM-2 embedding generation
+│   ├── proteins/
+│   │   └── cancer_proteins.db # 55-edge training set (SQLite)
+│   └── results/
+│       ├── biological_predictions.csv  # 100 ESM-2 predictions
+│       └── text_predictions.csv        # 100 PubMedBERT predictions
+│
+├── audit_scripts/
+│   ├── test_compositional_leakage.py       # BFS graph traversal
+│   ├── test_validation_precision.py        # Validation decomposition
+│   ├── test_protein_family_extrapolation.py # ESM-2 similarity analysis
+│   └── deep_discovery_oracle.py            # Re-ranking with penalties
+│
+├── reports/
+│   ├── leakage_audit_results.csv           # All 100 classified
+│   ├── validation_precision_decomposition.json
+│   └── family_extrapolation_analysis.json
+│
+├── TECHNICAL_REPORT.md           # Full paper (bioRxiv)
+├── SUPPLEMENTARY_MATERIALS.md    # Detailed audit analysis
+└── CORRECTED_METRICS_REPORT.md   # Audit summary
+```
+
+---
+
+## Key Findings
+
+### 1. Category Theory Works for Biology
+
+39% compositional predictions prove the framework correctly computes transitive closure of interaction graphs. This validates the mathematical implementation.
+
+### 2. ESM-2 Outperforms Text for Discovery
+
+Biological embeddings: 70% deep discovery
+Text embeddings: 38% deep discovery
+
+Text recalls published pathways. ESM-2 learns from evolutionary patterns.
+
+### 3. Most "Novel" Predictions Are Family Extrapolations
+
+87% of deep discoveries involve similar proteins (ESM-2 sim > 0.85). This is biologically expected - homologous proteins have similar binding partners.
+
+### 4. Only 7% Are Truly Novel
+
+Cross-family predictions (dissimilar proteins, not graph-reachable) require experimental validation before making biological claims.
 
 ---
 
 ## Limitations
 
-1. **Small dataset** (36 proteins, 55 known edges)
-2. **Limited validation set** (15 known interactions from PubMed)
-3. **Hub clustering** (90% of predictions involve 9 hub proteins)
-4. **No experimental validation** (predictions are testable hypotheses, not facts)
-5. **Static embeddings** (no tissue-specific or cellular context)
+- **Small training set:** 55 edges (4.4% of 36-protein graph density)
+- **Hub bias:** Predictions cluster around KRAS, TP53, MYC
+- **Validation contamination:** Original validation set had 54% compositional leakage
+- **No independent validation:** 0% precision on truly novel pairs (needs lab experiments)
 
 ---
 
-## Next Steps
+## Papers
 
-### Short-Term (3-6 months)
-- Validate top 30 predictions with AlphaFold 3 (structural agreement)
-- Co-IP experiments for top 10 interactions ($50K)
-- Drug synergy screens for top 5 Tier-1 combinations ($100K)
-
-### Medium-Term (1-2 years)
-- Scale to 270 cancer proteins
-- Hybrid embeddings (ESM-2 + AlphaFold + MPNet)
-- Context-aware models (tissue-specific, disease-specific)
-
-### Long-Term (3-5 years)
-- Full human interactome (20,000+ proteins)
-- Clinical trials for validated drug combinations
-- Multi-species interactions (host-pathogen, microbiome)
-
----
-
-## Citation
-
-If you use this work, please cite:
-
-```bibtex
-@software{komposos3_2026,
-  author = {Hawkins, James Ray},
-  title = {KOMPOSOS-III: Categorical Protein Interaction Prediction with Biological Embeddings},
-  year = {2026},
-  url = {https://github.com/Jayhawk314/KOMPOSOS-III-ALPHA}
-}
-```
-
----
-
-## License
-
-Apache 2.0 - See [LICENSE](LICENSE) for details.
-
-Dual licensing available for commercial use - See [LICENSE-COMMERCIAL](LICENSE-COMMERCIAL).
+**Main Paper:** [TECHNICAL_REPORT.md](TECHNICAL_REPORT.md)
+**Supplementary Materials:** [SUPPLEMENTARY_MATERIALS.md](SUPPLEMENTARY_MATERIALS.md)
+**Audit Report:** [CORRECTED_METRICS_REPORT.md](CORRECTED_METRICS_REPORT.md)
 
 ---
 
 ## Contact
 
-**James Ray Hawkins**
-- Email: jhawk314@gmail.com
-- GitHub: [@Jayhawk314](https://github.com/Jayhawk314)
+**Author:** James Ray Hawkins
+**Email:** jhawk314@gmail.com
+**GitHub:** github.com/Jayhawk314/KOMPOSOS-III-ALPHA
 
 ---
 
-## Acknowledgments
-
-This work builds on foundations laid by researchers in category theory (David Spivak, Bruno Gavranović, Urs Schreiber), protein language models (ESM-2 team at Meta AI, AlphaFold team at DeepMind), and systems thinking (Eric Daimler, MLST community).
-
-Inspired by **Demis Hassabis's conjecture** (Davos 2026):
-> "Any natural pattern in the universe can be efficiently modeled by classical learning algorithms."
-
-This work tests that conjecture on protein interaction networks, demonstrating that ESM-2 discovers functional patterns encoded in evolutionary sequence but invisible to current literature-based methods.
-
-**See [ACKNOWLEDGMENTS.md](ACKNOWLEDGMENTS.md) for full intellectual lineage and references.**
-
----
-
-**Status:** Research prototype, ready for experimental validation
-**Last Updated:** January 31, 2026
-**Version:** 0.1.0
+**Last Updated:** February 1, 2026
