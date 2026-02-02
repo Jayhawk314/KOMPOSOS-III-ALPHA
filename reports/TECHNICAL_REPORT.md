@@ -2,7 +2,7 @@
 
 **A Test of Hassabis's Conjecture on Natural Pattern Learning**
 
-**System:** KOMPOSOS-III Categorical Conjecture Engine
+**System:** KOMPOSOS-III-ALPHA Categorical Conjecture Engine
 **Author:** James Ray Hawkins
 **Date:** January 2026
 
