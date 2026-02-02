@@ -2,7 +2,7 @@
 
 **A Test of Hassabis's Conjecture on Natural Pattern Learning**
 
-**System:** KOMPOSOS-III Categorical Conjecture Engine
+**System:** KOMPOSOS-III-ALPHA Categorical Conjecture Engine
 **Author:** James Ray Hawkins
 **Date:** January 2026
 
@@ -166,7 +166,7 @@ If coherence < θ_min, reject prediction (conflicting evidence)
 
 ## 3. System Architecture
 
-### 3.1 KOMPOSOS-III Pipeline
+### 3.1 KOMPOSOS-III-ALPHA Pipeline
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -551,7 +551,7 @@ These represent genuinely novel hypotheses:
 - Output: Structural compatibility (can they physically bind?)
 - Accuracy: DockQ 0.656, ipTM scores for confidence
 
-**KOMPOSOS-III (Function-Based):**
+**KOMPOSOS-III-ALPHA (Function-Based):**
 - Input: Amino acid sequences (ESM-2) or protein names (MPNet)
 - Method: Embedding similarity + categorical reasoning
 - Output: Functional interaction propensity (do they functionally interact?)
@@ -588,11 +588,10 @@ Trial Design:
 - Primary endpoint: Overall response rate (ORR)
 - Secondary: Progression-free survival (PFS), safety
 
-Cost: $2-5M (Phase I/II)
-Timeline: 18-24 months to preliminary results
+
 ```
 
-**Impact:** If 5/21 combinations show clinical activity (24% success rate), this computational screen would generate $500M-1B in therapeutic value.
+**Impact:** If 5/21 combinations show clinical activity (24% success rate),
 
 ### 6.5 Limitations and Lessons Learned
 
